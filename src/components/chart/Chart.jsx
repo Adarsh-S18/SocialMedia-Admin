@@ -46,7 +46,6 @@ const Chart = ({ aspect, title }) => {
             { name: MONTHS[item._id - 1], "New User": item.total },
           ])
         );
-
         return () => {
           setUser([]);
         };

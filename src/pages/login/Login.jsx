@@ -46,12 +46,14 @@ const Login = () => {
     await axios
       .post(`/auth/admin-login`, details)
       .then((response) => { 
+        
         localStorage.setItem("user", JSON.stringify(response.data.other));
         localStorage.setItem("accessToken", response.data.accessToken);
         setAdminDetails(response.data);
         navigate("/");
       })
       .catch((err) => {
+        console.log(err.response.data ,"fdddddddddddd") 
         setErr(err.response.data);
         Swal.fire({
           title: "Error!",
